@@ -155,7 +155,7 @@ class CTransformersBackend(Backend):
         top_p: float = 0.92
         top_k: int = 0
         repetition_penalty: float = 1.1
-        stop: Optional[Union[str, List[str]]]
+        stop: Optional[Union[str, List[str]]] = None
     
     def __init__(self, model_name, model_type, **param_override):
         try:
@@ -217,7 +217,7 @@ class HuggingFaceBackend(Backend):
         top_p: float = 0.92
         top_k: int = 0
         repetition_penalty: float = 1.1
-        stop: Optional[Union[str, List[str]]]
+        stop: Optional[Union[str, List[str]]] = None
 
     def __init__(self, model_name, torch_dtype=None, trust_remote_code=True, use_auth_token=None, use_device_map=True, load_config=True, **param_override):
         import torch
